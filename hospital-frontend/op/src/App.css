@@ -1,0 +1,1333 @@
+/* Hero Section Styles */
+.hero-section {
+  background-image: url('./components/images/Background.jpeg'); background-size: cover;        /* Full screen cover */
+  background-position: center;   /* Center image */
+  background-repeat: no-repeat;  /* No repeat */
+  height: 100vh;                 /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.book-appointment-btn {
+  display: inline-block;
+  padding: 12px 40px;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+}
+
+.book-appointment-btn:hover {
+  background-color: #005f8e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.4);
+  color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 119, 182, 0.08);
+  margin-bottom: 0;
+  height: 70px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.navbar-logo span {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0077b6;
+  letter-spacing: 0.5px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #0077b6;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f4ff;
+  color: #0077b6;
+}
+
+.nav-logout-btn {
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-logout-btn:hover {
+  background-color: #005f8e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Services Page Styles */
+.services {
+  padding: 60px 80px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.services h2 {
+  font-size: 2rem;
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.services-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background-color: #f0f7ff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.15);
+}
+
+.service-icon {
+  color: #1a73e8;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1a1a2e;
+  color: #ccc;
+  padding: 45px 60px 0 60px;
+  margin-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-logo-section h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-image {
+  width: 40px;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  display: inline-block;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #aaa;
+  margin: 0;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #0077b6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding-left: 0;
+}
+
+.footer-links a:hover {
+  color: #1a73e8;
+  padding-left: 5px;
+}
+
+.footer-contact {
+  gap: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #aaa;
+}
+
+.contact-item svg {
+  color: #1a73e8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contact-item p {
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: #333;
+  margin: 0;
+}
+
+.footer-bottom {
+  padding: 22px 0;
+  background-color: #1a1a2e;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.footer-policies {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-policies a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-policies a:hover {
+  color: #1a73e8;
+}
+
+.footer-policies span {
+  color: #555;
+}
+
+/* Footer Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 0px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-policies {
+    justify-content: center;
+  }
+}
+
+/* Explore Page Styles */
+.explore-page {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+}
+
+.explore-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.explore-container h1 {
+  font-size: 48px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.explore-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.explore-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.explore-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 119, 182, 0.15);
+}
+
+.explore-card h2 {
+  font-size: 24px;
+  color: #0077b6;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.explore-card p {
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #0077b6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #005f8e;
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Doctor Details (Bootstrap Cards) Styles */
+.doctor-details-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+}
+
+.doctor-details-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-details-container > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.doctor-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: white;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.2);
+}
+
+.doctor-card .card-img-top {
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.doctor-card .card-body {
+  padding: 1.8rem 1.5rem;
+}
+
+.doctor-card .card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.doctor-card .card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.doctor-card .btn-primary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.7rem 1.8rem;
+  transition: all 0.3s ease;
+  background-color: #0077b6;
+  border: none;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.doctor-card .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.3);
+  background-color: #005f8e;
+}
+
+.doctor-card .btn-secondary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.7rem 1.8rem;
+  width: 100%;
+}
+
+/* Specialists Page Styles */
+.specialists-page {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+}
+
+.specialists-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.specialists-container h1 {
+  font-size: 48px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.specialists-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.specialist-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.specialist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 119, 182, 0.15);
+}
+
+.specialist-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.specialist-card h3 {
+  font-size: 20px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.specialist-doctor-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #0077b6;
+}
+
+/* Book Appointment Page Styles */
+.book-appointment-page {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+}
+
+.appointment-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.appointment-container h1 {
+  font-size: 40px;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.appointment-container p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.appointment-form {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #005f8e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+}
+
+/* Book Appointment Form Styles - Bootstrap */
+.book-appointment-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+}
+
+.book-appointment-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.book-appointment-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.summary-card {
+  border: none;
+  border-left: 5px solid #0077b6;
+  background-color: #e3f2fd;
+}
+
+.summary-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.summary-value {
+  font-family: 'Inter', sans-serif;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.appointment-form-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form {
+  font-family: 'Poppins', sans-serif;
+}
+
+.appointment-form .form-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+}
+
+.appointment-form .form-control,
+.appointment-form .form-select {
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.appointment-form .form-control:focus,
+.appointment-form .form-select:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 0 0.2rem rgba(0, 119, 182, 0.15);
+}
+
+/* Appointment Confirmation Page Styles */
+.appointment-confirmation {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+  padding: 60px 20px;
+}
+
+.confirmation-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.confirmation-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.appointment-details-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.appointment-header {
+  background: linear-gradient(135deg, #0077b6 0%, #005f8e 100%);
+  color: white;
+  border: none;
+  padding: 1.5rem;
+}
+
+.appointment-header h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.appointment-body {
+  padding: 2rem;
+}
+
+.detail-item {
+  margin-bottom: 1rem;
+}
+
+.detail-label {
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.detail-value {
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.appointment-date {
+  color: #0077b6 !important;
+  font-weight: 600;
+}
+
+.appointment-time {
+  color: #0077b6 !important;
+  font-weight: 600;
+}
+
+.alert-info-card {
+  border: none;
+  border-radius: 12px;
+  background-color: #e3f2fd;
+  border-left: 5px solid #0077b6;
+}
+
+.alert-info-card h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.important-list {
+  font-family: 'Inter', sans-serif;
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.important-list li {
+  color: #666;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-buttons .btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+}
+
+.action-buttons .btn-primary {
+  background-color: #0077b6;
+  border-color: #0077b6;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn-primary:hover {
+  background-color: #005f8e;
+  border-color: #005f8e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+}
+
+.action-buttons .btn-outline-primary {
+  color: #0077b6;
+  border-color: #0077b6;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .btn-outline-primary:hover {
+  background-color: #0077b6;
+  border-color: #0077b6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointment-confirmation {
+    padding: 40px 15px;
+  }
+
+  .confirmation-title {
+    font-size: 1.8rem;
+  }
+
+  .appointment-details-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .appointment-body {
+    padding: 1.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+
+  .book-appointment-title {
+    font-size: 1.8rem;
+  }
+
+  .book-appointment-container {
+    padding: 40px 15px;
+  }
+}
+
+/* Booking Modal Styles */
+.booking-modal .modal-content {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modal-body-custom {
+  padding: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.modal-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.booking-details {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-box {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  border-left: 4px solid #0077b6;
+}
+
+.detail-box .detail-label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #1a1a2e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.detail-box .detail-value {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.appointment-id {
+  font-family: 'Courier New', monospace !important;
+  color: #0077b6 !important;
+  font-size: 0.9rem !important;
+}
+
+.appointment-highlight {
+  color: #0077b6 !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+}
+
+.modal-footer-custom {
+  border-top: 1px solid #e0e0e0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  gap: 0.75rem;
+}
+
+.booking-modal .btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.65rem 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.booking-modal .btn-primary {
+  background-color: #0077b6;
+  border-color: #0077b6;
+}
+
+.booking-modal .btn-primary:hover {
+  background-color: #005f8e;
+  border-color: #005f8e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+}
+
+.booking-modal .btn-outline-secondary {
+  color: #666;
+  border-color: #ddd;
+}
+
+.booking-modal .btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #0077b6;
+  color: #0077b6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.1);
+}
+
+/* Simple Success Modal Styles */
+.booking-success-modal .modal-content {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.modal-success-body {
+  padding: 3rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.modal-success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 0.8rem;
+  margin-top: 0;
+}
+
+.modal-success-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.modal-footer-success {
+  border-top: none;
+  padding: 0 2rem 2rem 2rem;
+  background-color: white;
+}
+
+.booking-success-modal .btn-primary {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: #0077b6;
+  border-color: #0077b6;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.booking-success-modal .btn-primary:hover {
+  background-color: #005f8e;
+  border-color: #005f8e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.3);
+}
+
+/* My Bookings Page Styles */
+.my-bookings-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 70px);
+  padding: 60px 20px;
+}
+
+.my-bookings-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.my-bookings-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.empty-bookings-alert {
+  border: none;
+  border-radius: 12px;
+  background-color: #e3f2fd;
+  border-left: 5px solid #0077b6;
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+.empty-bookings-alert h5 {
+  color: #0077b6;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.empty-bookings-alert p {
+  font-family: 'Inter', sans-serif;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+}
+
+.booking-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.booking-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 119, 182, 0.2);
+}
+
+.booking-card-header {
+  background: linear-gradient(135deg, #0077b6 0%, #005f8e 100%);
+  color: white;
+  border: none;
+  padding: 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking-doctor {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.booking-id {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.booking-card-body {
+  padding: 1.5rem;
+}
+
+.booking-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-icon {
+  color: #0077b6;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.booking-info {
+  flex: 1;
+}
+
+.booking-label {
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.booking-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.appointment-highlight {
+  color: #0077b6 !important;
+  font-weight: 700 !important;
+}
+
+.booking-notes {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #0077b6;
+}
+
+.notes-label {
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0077b6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.notes-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.booking-card-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem;
+}
+
+.booking-card-footer .btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.booking-card-footer .btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.booking-card-footer .btn-outline-danger:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.2);
+}

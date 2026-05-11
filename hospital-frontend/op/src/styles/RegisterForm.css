@@ -1,0 +1,355 @@
+/* RegisterForm Styles - Clean Hospital UI */
+
+:root {
+  --primary-color: #0077b6;
+  --primary-light: #00b4d8;
+  --primary-dark: #005a87;
+  --success-color: #06a77d;
+  --error-color: #d62828;
+  --warning-color: #f77f00;
+  --neutral-gray: #f0f4f8;
+  --text-dark: #1a202c;
+  --text-light: #718096;
+  --border-color: #e2e8f0;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Register Page Container */
+.register-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #dbe9f4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Hospital Header */
+.hospital-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.hospital-icon {
+  font-size: 64px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.hospital-title {
+  color: var(--primary-color);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.hospital-subtitle {
+  color: var(--text-light);
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Register Form Card */
+.register-form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: var(--box-shadow);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@media (max-width: 480px) {
+  .register-form-card {
+    padding: 25px;
+    border-radius: 10px;
+  }
+
+  .hospital-title {
+    font-size: 22px;
+  }
+
+  .hospital-icon {
+    font-size: 48px;
+  }
+}
+
+/* Form Title */
+.form-title {
+  color: var(--text-dark);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Alert Styles */
+.error-alert {
+  border: none;
+  border-radius: 8px;
+  background-color: #ffebee;
+  color: var(--error-color);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.error-alert strong {
+  font-weight: 600;
+}
+
+.success-alert {
+  border: none;
+  border-radius: 8px;
+  background-color: #e8f5e9;
+  color: var(--success-color);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Form Styles */
+.register-form {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-dark);
+  background-color: #fafbfc;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--text-light);
+}
+
+.form-input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Password Input Wrapper */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 45px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.password-toggle-btn:hover:not(:disabled) {
+  color: var(--primary-color);
+}
+
+.password-toggle-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color) !important;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Register Button */
+.register-button {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  padding: 12px 20px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 119, 182, 0.2);
+}
+
+.register-button:hover:not(:disabled) {
+  background-color: var(--primary-dark) !important;
+  box-shadow: var(--box-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.register-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.register-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Login Section */
+.login-section {
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.login-text {
+  color: var(--text-light);
+  font-size: 14px;
+  margin: 0;
+}
+
+.login-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .hospital-header {
+    margin-bottom: 30px;
+  }
+
+  .form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .register-form-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hospital-title {
+    font-size: 20px;
+  }
+
+  .hospital-icon {
+    font-size: 40px;
+  }
+
+  .register-form-card {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 18px;
+  }
+}
+
+/* Bootstrap overrides for consistency */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+}
+
+.btn-primary-hospital {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary-hospital:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Loading spinner style */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
