@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -19,6 +19,7 @@ import MyAppointments from "./components/MyAppointments";
 import Payment from "./components/Payment";
 
 function App() {
+  const location = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -26,20 +27,24 @@ function App() {
     setIsLoggedIn(loggedIn);
   }, []);
 
+  const showDashboardFrame = isLoggedIn && location.pathname !== '/';
+
   return (
     <div>
-      {isLoggedIn && <Nav setIsLoggedIn={setIsLoggedIn} />}
+      {showDashboardFrame && <Nav setIsLoggedIn={setIsLoggedIn} />}
       <Routes>
-        {!isLoggedIn && (
+        <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
+
+        {!isLoggedIn ? (
           <>
-            <Route path="/" element={<Auth setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="/login" element={<Auth setIsLoggedIn={setIsLoggedIn} />} />
             <Route path="/register" element={<Register setIsLoggedIn={setIsLoggedIn} />} />
-            <Route path="/*" element={<Auth setIsLoggedIn={setIsLoggedIn} />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </>
-        )}
-        {isLoggedIn && (
+        ) : (
           <>
-            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Navigate to="/" replace />} />
+            <Route path="/register" element={<Navigate to="/" replace />} />
             <Route path="/Explore" element={<Explore />} />
             <Route path="/Specialists" element={<Specialists />} />
             <Route path="/doctor-details/:category?" element={<DoctorDetails />} />
@@ -49,10 +54,11 @@ function App() {
             <Route path="/my-bookings" element={<MyBooking />} />
             <Route path="/my-appointments" element={<MyAppointments />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </>
         )}
       </Routes>
-      {isLoggedIn && <Footer />}
+      {showDashboardFrame && <Footer />}
     </div>
   );
 }

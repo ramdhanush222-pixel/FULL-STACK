@@ -13,6 +13,7 @@ import os
 from django.contrib.auth.hashers import make_password
 from dotenv import load_dotenv
 from pathlib import Path
+from django.shortcuts import render
 
 
 # Exact path to .env file
@@ -23,6 +24,15 @@ load_dotenv(BASE_DIR / '.env')
 def get_users(request):
     users = User.objects.all().values()
     return Response(users)
+
+
+def data_dashboard(request):
+    context = {
+        "users": User.objects.all().order_by("-id"),
+        "appointments": Appointment.objects.all().order_by("-id"),
+        "payments": Payment.objects.select_related("appointment").all().order_by("-id"),
+    }
+    return render(request, "api/dashboard.html", context)
 
 
 @api_view(['GET'])

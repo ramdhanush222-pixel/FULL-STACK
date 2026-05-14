@@ -1,8 +1,9 @@
 from django.urls import path
 from .views import test_api, save_appointment, get_appointments, cancel_appointment, make_payment,get_payments,create_order,verify_payment,test_razorpay
-from .views import register_user, login_user,get_users
+from .views import register_user, login_user, get_users, data_dashboard
 
 urlpatterns = [
+    path('dashboard/', data_dashboard),
     path('test/', test_api),
     path('save/', save_appointment),
     path('appointments/', get_appointments),

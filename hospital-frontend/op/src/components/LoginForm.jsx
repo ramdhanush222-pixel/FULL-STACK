@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container, Form, Button, Alert, Spinner } from 'react-bootstrap';
-import { Eye, EyeOff } from 'lucide-react';
+import {
+  Eye,
+  EyeOff,
+  Mail,
+  LockKeyhole,
+  ShieldCheck,
+  CalendarHeart,
+  Stethoscope
+} from 'lucide-react';
 import { API_ENDPOINTS } from '../config/api';
 import '../styles/LoginForm.css';
 
@@ -71,12 +79,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
 
     try {
       setIsLoading(true);
-      console.log("Sending login request to:", API_ENDPOINTS.LOGIN);
-      console.log("Payload:", payload);
 
       const response = await axios.post(API_ENDPOINTS.LOGIN, payload);
-      console.log("Login response:", response.data);
-
       const { data } = response;
 
       localStorage.setItem('isLoggedIn', 'true');
@@ -92,10 +96,6 @@ const LoginForm = ({ setIsLoggedIn }) => {
         navigate('/');
       }, 1200);
     } catch (error) {
-      console.error("Login error:", error);
-      console.error("Error response:", error.response?.data);
-      console.error("Error status:", error.response?.status);
-
       const backendMessage =
         error.response?.data?.detail ||
         error.response?.data?.error ||
@@ -110,20 +110,60 @@ const LoginForm = ({ setIsLoggedIn }) => {
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prevState) => !prevState);
   };
 
   return (
     <div className="login-page">
-      <Container className="login-container">
-        <div className="hospital-header">
-          <div className="hospital-icon">🏥</div>
-          <h1 className="hospital-title">Medicare Hospital</h1>
-          <p className="hospital-subtitle">Manage your medical appointments with ease</p>
-        </div>
+      <Container className="login-shell">
+        <section className="login-showcase">
+          <div className="login-showcase-badge">
+            <ShieldCheck size={16} />
+            <span>Secure Patient Portal</span>
+          </div>
 
-        <div className="login-form-card">
-          <h2 className="form-title">Login to Your Account</h2>
+          <div className="login-brand">
+            <div className="login-brand-icon">H</div>
+            <div>
+              <p className="login-brand-label">Medicare Hospital</p>
+              <h1 className="login-brand-title">Your care journey, organized in one place.</h1>
+            </div>
+          </div>
+
+          <p className="login-showcase-copy">
+            Log in to review appointments, continue bookings, and keep your hospital records within easy reach.
+          </p>
+
+          <div className="login-feature-grid">
+            <article className="login-feature-card">
+              <CalendarHeart size={20} />
+              <div>
+                <h3>Appointments</h3>
+                <p>Book, track, and manage upcoming visits without extra steps.</p>
+              </div>
+            </article>
+
+            <article className="login-feature-card">
+              <Stethoscope size={20} />
+              <div>
+                <h3>Specialists</h3>
+                <p>Reconnect with trusted doctors and departments faster.</p>
+              </div>
+            </article>
+          </div>
+
+          <div className="login-showcase-footer">
+            <span className="login-stat-value">24/7</span>
+            <span className="login-stat-label">access for registered patients</span>
+          </div>
+        </section>
+
+        <section className="login-panel">
+          <div className="login-panel-header">
+            <p className="login-panel-kicker">Welcome back</p>
+            <h2 className="login-panel-title">Sign in to your account</h2>
+            <p className="login-panel-copy">Use your registered email and password to continue.</p>
+          </div>
 
           {generalError && (
             <Alert variant="danger" className="error-alert">
@@ -140,16 +180,21 @@ const LoginForm = ({ setIsLoggedIn }) => {
           <Form onSubmit={handleSubmit} className="login-form">
             <Form.Group className="mb-3" controlId="email">
               <Form.Label className="form-label">Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleInputChange}
-                isInvalid={!!errors.email}
-                className="form-input"
-                disabled={isLoading}
-              />
+              <div className="input-shell">
+                <span className="input-icon">
+                  <Mail size={18} />
+                </span>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  isInvalid={!!errors.email}
+                  className="form-input input-with-icon"
+                  disabled={isLoading}
+                />
+              </div>
               <Form.Control.Feedback type="invalid" className="error-message">
                 {errors.email}
               </Form.Control.Feedback>
@@ -158,6 +203,9 @@ const LoginForm = ({ setIsLoggedIn }) => {
             <Form.Group className="mb-3" controlId="password">
               <Form.Label className="form-label">Password</Form.Label>
               <div className="password-input-wrapper">
+                <span className="input-icon">
+                  <LockKeyhole size={18} />
+                </span>
                 <Form.Control
                   type={showPassword ? 'text' : 'password'}
                   name="password"
@@ -165,7 +213,7 @@ const LoginForm = ({ setIsLoggedIn }) => {
                   value={formData.password}
                   onChange={handleInputChange}
                   isInvalid={!!errors.password}
-                  className="form-input password-input"
+                  className="form-input password-input input-with-icon"
                   disabled={isLoading}
                 />
                 <button
@@ -183,12 +231,18 @@ const LoginForm = ({ setIsLoggedIn }) => {
               </Form.Control.Feedback>
             </Form.Group>
 
+            <div className="login-helper-row">
+              <span>Protected login for registered patients only</span>
+              <Link to="/register" className="quick-register-link">
+                Create account
+              </Link>
+            </div>
+
             <Button
               variant="primary"
               type="submit"
               className="login-button btn-primary-hospital"
               disabled={isLoading}
-              style={{ width: '100%', marginTop: '20px' }}
             >
               {isLoading ? (
                 <>
@@ -201,15 +255,16 @@ const LoginForm = ({ setIsLoggedIn }) => {
             </Button>
           </Form>
 
-          <div className="register-section">
-            <p className="register-text">
-              Don&apos;t have an account?{' '}
-              <Link to="/register" className="register-link">
-                Register here
-              </Link>
+          <div className="login-support-card">
+            <p className="login-support-title">New to the portal?</p>
+            <p className="login-support-copy">
+              Create an account to start booking appointments and viewing payment details.
             </p>
+            <Link to="/register" className="register-link">
+              Register here
+            </Link>
           </div>
-        </div>
+        </section>
       </Container>
     </div>
   );
