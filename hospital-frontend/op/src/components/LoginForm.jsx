@@ -270,4 +270,8 @@ const LoginForm = ({ setIsLoggedIn }) => {
   );
 };
 
+<<<<<<< HEAD
 export default LoginForm;
+=======
+export default LoginForm;
+>>>>>>> 9c5f9386fd409def3b7d38ddb52e947a12c621f9

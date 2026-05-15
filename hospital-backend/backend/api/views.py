@@ -198,4 +198,8 @@ def verify_payment(request):
         status="Success"
     )
 
+<<<<<<< HEAD
     return Response({"message": "Payment Saved Successfully"})
+=======
+    return Response({"message": "Payment Saved Successfully"})
+>>>>>>> 9c5f9386fd409def3b7d38ddb52e947a12c621f9

@@ -109,7 +109,11 @@ const Register = () => {
       setErrors({});
 
       setTimeout(() => {
+<<<<<<< HEAD
         navigate('/');
+=======
+        navigate('/login');
+>>>>>>> 9c5f9386fd409def3b7d38ddb52e947a12c621f9
       }, 1400);
     } catch (error) {
       console.error("Register error:", error);
@@ -291,7 +295,11 @@ const Register = () => {
           <div className="login-section">
             <p className="login-text">
               Already have an account?{' '}
+<<<<<<< HEAD
               <Link to="/" className="login-link">
+=======
+              <Link to="/login" className="login-link">
+>>>>>>> 9c5f9386fd409def3b7d38ddb52e947a12c621f9
                 Login
               </Link>
             </p>
