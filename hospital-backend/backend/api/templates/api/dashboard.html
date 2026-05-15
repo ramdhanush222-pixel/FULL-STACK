@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Data Dashboard</title>
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --card: #ffffff;
+            --border: #d7e0ea;
+            --heading: #183b56;
+            --text: #334e68;
+            --accent: #2f80ed;
+            --muted: #829ab1;
+            --success: #1f7a4d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 100%);
+            color: var(--text);
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 20px 48px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #16324f, #2f80ed);
+            color: #fff;
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 20px 40px rgba(17, 43, 69, 0.18);
+        }
+
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+
+        .hero p {
+            margin: 0;
+            opacity: 0.92;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .summary-card,
+        .table-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .summary-card {
+            padding: 20px;
+        }
+
+        .summary-card h2 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .summary-card .value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--heading);
+        }
+
+        .tables {
+            display: grid;
+            gap: 20px;
+        }
+
+        .table-card {
+            overflow: hidden;
+        }
+
+        .table-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .table-head h3 {
+            margin: 0;
+            color: var(--heading);
+            font-size: 20px;
+        }
+
+        .badge {
+            background: rgba(47, 128, 237, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+
+        th,
+        td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f8fbff;
+            color: var(--heading);
+            font-weight: 700;
+        }
+
+        tr:hover td {
+            background: #fafcff;
+        }
+
+        .status {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .empty {
+            padding: 20px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .page {
+                padding: 20px 14px 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <h1>Hospital Data Dashboard</h1>
+            <p>View registered users, appointment bookings, and payment records together in Django.</p>
+        </section>
+
+        <section class="summary">
+            <div class="summary-card">
+                <h2>Registered Users</h2>
+                <div class="value">{{ users|length }}</div>
+            </div>
+            <div class="summary-card">
+                <h2>Appointments</h2>
+                <div class="value">{{ appointments|length }}</div>
+            </div>
+            <div class="summary-card">
+                <h2>Payments</h2>
+                <div class="value">{{ payments|length }}</div>
+            </div>
+        </section>
+
+        <section class="tables">
+            <div class="table-card">
+                <div class="table-head">
+                    <h3>Registered Users</h3>
+                    <span class="badge">{{ users|length }} records</span>
+                </div>
+                {% if users %}
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="empty">No registered users found.</div>
+                {% endif %}
+            </div>
+
+            <div class="table-card">
+                <div class="table-head">
+                    <h3>Appointments</h3>
+                    <span class="badge">{{ appointments|length }} records</span>
+                </div>
+                {% if appointments %}
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Doctor</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for appointment in appointments %}
+                            <tr>
+                                <td>{{ appointment.id }}</td>
+                                <td>{{ appointment.name }}</td>
+                                <td>{{ appointment.phone }}</td>
+                                <td>{{ appointment.doctor }}</td>
+                                <td>{{ appointment.date }}</td>
+                                <td>{{ appointment.time }}</td>
+                                <td class="status">{{ appointment.status }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="empty">No appointments found.</div>
+                {% endif %}
+            </div>
+
+            <div class="table-card">
+                <div class="table-head">
+                    <h3>Payments</h3>
+                    <span class="badge">{{ payments|length }} records</span>
+                </div>
+                {% if payments %}
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Amount</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                                <th>Appointment ID</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for payment in payments %}
+                            <tr>
+                                <td>{{ payment.id }}</td>
+                                <td>{{ payment.name }}</td>
+                                <td>{{ payment.email }}</td>
+                                <td>Rs. {{ payment.amount }}</td>
+                                <td>{{ payment.method|default:"Not provided" }}</td>
+                                <td class="status">{{ payment.status }}</td>
+                                <td>{% if payment.appointment %}{{ payment.appointment.id }}{% else %}N/A{% endif %}</td>
+                                <td>{{ payment.created_at }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="empty">No payments found.</div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</body>
+</html>

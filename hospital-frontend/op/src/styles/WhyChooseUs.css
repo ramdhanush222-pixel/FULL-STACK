@@ -1,0 +1,117 @@
+/* Why Choose Us Section Styles */
+
+.why-container {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.why-container h2 {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.why-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  border-radius: 2px;
+}
+
+.why-card {
+  background: white;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 119, 182, 0.15) !important;
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.2);
+}
+
+.why-card .card-title {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.why-card .card-text {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .why-container {
+    padding: 40px 0;
+  }
+
+  .why-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .why-card {
+    margin-bottom: 2rem;
+  }
+
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .feature-icon span {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .why-card {
+    padding: 1rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-icon span {
+    font-size: 2rem !important;
+  }
+
+  .why-card .card-title {
+    font-size: 1.1rem;
+  }
+
+  .why-card .card-text {
+    font-size: 0.9rem;
+  }
+}
